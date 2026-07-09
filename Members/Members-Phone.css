@@ -1,0 +1,170 @@
+:root{
+    --primary-color: #f5f5f5;
+    --secondary-color: #333;
+    --outline-title-color: #20a2b3;
+    --title-color: #2eb4e5;
+    --color: #1717c2;
+    --color1: #111184;
+}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@media (max-width: 768px) {
+.Side-Pop-Up {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Hidden off-screen initially */
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease; /* Smooth sliding effect */
+    z-index: 1000;
+}
+.Side-Pop-Up.active {
+  right: 0;
+}
+.Side{
+    display:flex;
+    flex-direction: column;
+    height:100vw;
+    column-gap:10vw;
+}
+.Mobile-Popup{
+    border:none;
+    background-color: var(--primary-color);
+}
+.Container{
+    display: flex;
+    flex-direction: column;
+    column-gap: 5vw;
+    background-color: #FCFCF7;
+}
+.Logo{
+    height: 11vw;
+    width: 11vw;
+    border-radius: 50%;
+    cursor: default;
+}
+.Logo-Name{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    cursor: default;
+}
+.Name{
+    font-size: 3.5vw;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-family: 'arial', sans-serif;
+    cursor: default;
+}
+
+.Header{
+    background-color: var(--primary-color);
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    cursor: default;
+}
+
+.Button{
+    display: none;
+}
+.Header-Button{
+    display:none;
+}
+.Close-Button{
+    background:none;
+    border:none;
+    height:10vw;
+    position: relative; 
+    align-items:left;
+}
+.Side-Button{
+    background: none;
+    border: none;
+    font-size: 5vw;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    color: #333;
+    position: relative; /* Crucial anchor for the line */
+    padding: 2vw 0;
+    padding-left:10vw;
+    margin-bottom:5vw;
+    text-align: left;
+}
+
+.Side-Button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Hidden by default */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left; /* Slide direction */
+    transition: transform 0.25s ease-out; /* Smooth transition */
+}
+
+.Side-Button:hover::after {
+    transform: scaleX(1);
+}
+.Content{
+    align-items: center;
+    justify-content: center;
+}
+.Content-Title{
+    font-size: 4.6vw;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-family: 'arial', sans-serif;
+    padding-left: 2vw;
+    cursor: default;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.card{
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 1vw;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+.card:hover{
+    transform: translateY(-5px);
+    text-decoration: none;
+}
+
+.title-name{
+    font-size: 4vw;
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:bold;
+    text-decoration: none;
+}
+.description{
+    font-size: 3vw;
+    color: var(--title-color);
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    text-shadow: 0.5px 0.5px 1px var(--outline-title-color);
+}
+} 

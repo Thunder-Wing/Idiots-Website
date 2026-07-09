@@ -1,0 +1,263 @@
+:root{
+    --primary-color: #f5f5f5;
+    --secondary-color: #333;
+    --outline-blue:#a3d3fa;
+    --outline-title-color: #20a2b3;
+    --title-color: #2eb4e5;
+    --information-color: #FFBF00;
+    --information-color-shadow: #DAA520;
+}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@media (max-width: 768px) {
+.Side-Pop-Up {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Hidden off-screen initially */
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease; /* Smooth sliding effect */
+    z-index: 1000;
+}
+.Side-Pop-Up.active {
+  right: 0;
+}
+.Side{
+    display:flex;
+    flex-direction: column;
+    height:100vw;
+    column-gap:10vw;
+}
+.Mobile-Popup{
+    border:none;
+    background-color: var(--primary-color);
+}
+.Container{
+    display: flex;
+    flex-direction: column;
+    column-gap: 5vw;
+    background-color: #FCFCF7;
+}
+.Logo{
+    height: 11vw;
+    width: 11vw;
+    border-radius: 50%;
+    cursor: default;
+}
+.Logo-Name{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    cursor: default;
+}
+.Name{
+    font-size: 3.5vw;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-family: 'arial', sans-serif;
+    cursor: default;
+}
+
+.Header{
+    background-color: var(--primary-color);
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    cursor: default;
+}
+
+.Button{
+    display: none;
+}
+.Header-Button{
+    display:none;
+}
+.Close-Button{
+    background:none;
+    border:none;
+    height:10vw;
+    position: relative; 
+    align-items:left;
+}
+.Side-Button{
+    background: none;
+    border: none;
+    font-size: 5vw;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    color: #333;
+    position: relative; /* Crucial anchor for the line */
+    padding: 2vw 0;
+    padding-left:10vw;
+    margin-bottom:5vw;
+    text-align: left;
+}
+
+.Side-Button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Hidden by default */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left; /* Slide direction */
+    transition: transform 0.25s ease-out; /* Smooth transition */
+}
+
+.Side-Button:hover::after {
+    transform: scaleX(1);
+}
+.Main-Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+    background-color: var(--outline-blue);
+    border-radius: 2vw;
+    width: 90%;
+    height: 200vw;
+    margin: 2vw auto;
+    cursor: default;
+
+}
+.Picture{
+    width: 96%;
+    height: 75vw;
+    padding: 1vw;
+    background-color:#FCFCF7;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    cursor: default;
+    
+}
+.Profile-Picture{
+    width: 100%;
+    height: 100%;
+    border-radius: 2vw;
+    object-fit: cover;
+    cursor: default;
+
+}
+.Content{
+    width: 96%;
+    height: 130vw;
+    padding: 1vw;
+    background-color:#FCFCF7;
+    text-align: left;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    cursor: default;
+    margin-top: 2vw;
+}
+.Content-Title{
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+}
+.Person-Name{
+    font-size: 6vw;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-family: 'arial', sans-serif;
+    padding-left: 2vw;
+    margin: 0px;
+    border: none;
+    cursor: default;      
+}
+.Person-Title{
+    font-size: 4vw;
+    color: var(--title-color);
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    text-shadow: 0.5px 0.5px 1px var(--outline-title-color);
+    padding-left: 2vw;
+    border-top: none; 
+    margin: 0px;
+    border-bottom: 3px solid var(--secondary-color);
+    cursor: default;
+}
+.Content-Information-Divider{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2vw;
+    gap: 0.2vw;
+    cursor: default;
+}
+.Person-Information{
+    font-size: 3vw;
+    color: var(--text-color);
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    padding-left: 2vw;
+    margin: 0px;
+    border: none;
+    cursor: default;
+}
+.Person-Information-Description{
+    font-size: 3.4vw;
+    color: var(--information-color);
+    text-shadow: 0.5px 0.5px 1px var(--information-color-shadow);
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    padding-left: 2vw;
+    border: none; 
+    margin: 0px;
+    cursor: default;
+}
+.Content-Description-Divider{
+    padding-top: 1.5vw;
+    border-top: 3px solid var(--secondary-color);
+    cursor: default;
+}
+.Social-Media-Links-Divider{
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.5vw;
+    padding-left: 2vw;
+    text-decoration: none;
+    color: var(--secondary-color);
+    align-items: center;
+    justify-content: left;
+}
+.Social-Media-Link{
+    font-size: 2.4vw;
+    color: var(--secondary-color);
+    font-weight: 300;
+    font-style: normal;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+}
+.Person-Description{
+    font-size: 2.4vw;
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    padding-left: 2vw;
+    border: none; 
+    margin: 0px;
+    cursor: default;
+}
+}
